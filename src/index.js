@@ -7,17 +7,14 @@ window.addEventListener('DOMContentLoaded', (event) => {
   var myObstacle;
   var myBackground;
   var myObstacleTwo;
-
+ // var myScore;
   function startGame() {
       myGamePiece = new component(70, 70, "scottie.png", 240, 230, "image");
+     // myScore = new component("30px", "Consolas", "black", 280, 200, "text");
       myObstacle = new component(60, 60, "cat.png", 0, 130, "image");
       myObstacleTwo = new component(50, 50, "catone.png", 0, 70, "image");
       myBackground = new component(656, 270, "flower.jpg", 0, 0, "image");
       myGameArea.start();
-  }
-  if (myObstacle.x > 320) {
-
-    myObstacle.x = -32;
   }
   
   var myGameArea = {
@@ -52,6 +49,13 @@ window.addEventListener('DOMContentLoaded', (event) => {
       this.y = y;    
       this.update = function() {
           ctx = myGameArea.context;
+          // if (this.type == "text") {
+          //   ctx.font = this.width + " " + this.height;
+          //   ctx.fillStyle = color;
+          //   ctx.fillText(this.text, this.x, this.y);
+          // } else {
+            
+          
           if (type == "image") {
               ctx.drawImage(this.image, 
                   this.x, 
@@ -60,18 +64,22 @@ window.addEventListener('DOMContentLoaded', (event) => {
           } else {
               ctx.fillStyle = color;
               ctx.fillRect(this.x, this.y, this.width, this.height);
-          }
+          }}
+          
       }
       this.newPos = function() {
           this.x += this.speedX;
-          this.y += this.speedY;        
+          this.y += this.speedY;
+                    
       }
   }
   
   function updateGameArea() {
       myGameArea.clear();
+     // myGameArea.frameNo += 1;
       myBackground.newPos();
       myBackground.update();
+     
       myObstacle.x += 1;
       myObstacle.update();
       myObstacleTwo.x += 3;
