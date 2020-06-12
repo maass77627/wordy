@@ -6,18 +6,34 @@
   <link rel="stylesheet" type="text/css" href="styles.css" media="screen"/>
     <script type="application/javascript" src="src/index.js" charset="UTF-8"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<style>
-canvas {
-    border: 1px solid #15c72d;
-    background-color: #FFC300;
-}
-</style>
 </head>
-<body onload="startGame()">
-  <button id="button1">Click Me!</button>
+
+<body onload="startGame()"> 
   
-
-    <p>We have created a game area! (or at least an empty canvas)</p>
-
+  <button id="button1">Click Me!</button>
+  <div class="a"></div>
+  <div class="b"></div>
+  <div class="c"></div>
+  <div class="d"></div>
+  <div class="e"></div>
+  <div class="f"></div>
+  <div class="g"></div>
+  <div class="h"></div>
+  <div class="i"></div>
+  
+  
+  <div class="j" style="text-align:center;width:480px;">
+    <!-- <button onclick="moveup()">UP</button><br><br>
+    <button onclick="moveleft()">LEFT</button>
+    <button onclick="moveright()">RIGHT</button><br><br>
+    <button onclick="movedown()">DOWN</button> -->
+<button onmousedown="moveup()" onmouseup="stopMove()" ontouchstart="moveup()">UP</button>
+<button onmousedown="movedown()" onmouseup="stopMove()" ontouchstart="movedown()">DOWN</button>
+<button onmousedown="moveleft()" onmouseup="stopMove()" ontouchstart="moveleft()">LEFT</button>
+<button onmousedown="moveright()" onmouseup="stopMove()" ontouchstart="moveright()">RIGHT</button>
+  </div>
 </body>
 </html>
+
+
+
