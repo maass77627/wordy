@@ -25,14 +25,14 @@ div.a {
 
 
 
-  div.j {
+  /* div.j {
     position:fixed;
    bottom: 300;
     left: 0;
     text-decoration: underline;
     text-decoration-color: red;
   } 
-  
+   */
 
   button#button1 {
     width: 50px;
@@ -45,6 +45,6 @@ div.a {
     }
 
     canvas {
-        border: 1px solid #15c72d;
-        background-color: #FFC300;
+        border: 1px solid #1c143a;
+        background-color: #0e2247;
     }
