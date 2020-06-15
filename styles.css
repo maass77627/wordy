@@ -1,51 +1,16 @@
-div.a {
-    animation: mymove 5s infinite;
-    animation-direction: alternate;
-    position:fixed;
-    top: 0;
-    left: 0;
-    text-decoration: underline;
-    text-decoration-color: red;
-  } 
-
-  @keyframes mymove {
-    from {left: 0px;}
-    to {left: 200px;}
+body {
+    background: rgb(12, 40, 63);
+    color: #50a85b;
+  }
+  canvas {
+    background: #76c98f;
+    padding: 0;
+    margin: 0 auto;
+    margin-bottom: 1rem;
+    display: block;
   }
 
-  /* img {
-    animation: mymove 5s infinite;
-    animation-direction: alternate;
-    position:fixed;
-    top: 0;
-    left: 0;
-    text-decoration: underline;
-    text-decoration-color: red;
-  }  */
+  nav { 
+      color: teal;
 
-
-
-  /* div.j {
-    position:fixed;
-   bottom: 300;
-    left: 0;
-    text-decoration: underline;
-    text-decoration-color: red;
-  } 
-   */
-
-  button#button1 {
-    width: 50px;
-    height:50px;
-     background-color:yellow;
-    position:fixed;
-    top: 0;
-    right: 100;
-        
-    }
-
-    canvas {
-        border: 1px solid #1c143a;
-        background-color: #0e2247;
-        
-    }
+  }
