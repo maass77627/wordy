@@ -1,16 +1,39 @@
+
+ div {
+  color: #1a0b72;
+  background-color: #FF9900;
+  font-family: Georgia, serif;
+  font-size: 30px;
+  border: 2px solid #1C6EA4;
+  width: 100px;
+  height: 40px;
+
+}
+
+
+
+
 body {
-    background: rgb(12, 40, 63);
-    color: #50a85b;
+    background: rgb(212, 210, 51);
+   
   }
-  canvas {
+  /* canvas {
     background: #76c98f;
     padding: 0;
     margin: 0 auto;
     margin-bottom: 1rem;
     display: block;
-  }
+  } */
 
-  nav { 
+  /* nav { 
       color: teal;
+
+  } */
+
+  div#1 {
+    color: #99CC00;
+    background-color: #FF9900;
+    font-family: Georgia, serif;
+    font-size: 16px;
 
   }

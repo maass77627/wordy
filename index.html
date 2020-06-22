@@ -3,34 +3,35 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <nav> </nav>
+  
   <!-- Compiled and minified CSS -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"> -->
   
 <link rel="stylesheet" type="text/css" href="styles.css" media="screen"/>
  
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 </head>
 
-<body>
-  
- <canvas id="myCanvas" width="700" height="500"></canvas>
+<!-- <body  onload="startGame()"> -->
+  <body>
+ 
   <button id="button1">Start</button>
  
   
   
  
-  <div style="text-align:center;width:480px;">
+  <tag style="text-align:center;width:480px;">
     <button onmousedown="moveup()" onmouseup="clearmove()" ontouchstart="moveup()">UP</button><br><br>
     <button onmousedown="moveleft()" onmouseup="clearmove()" ontouchstart="moveleft()">LEFT</button>
     <button onmousedown="moveright()" onmouseup="clearmove()" ontouchstart="moveright()">RIGHT</button><br><br>
     <button onmousedown="movedown()" onmouseup="clearmove()" ontouchstart="movedown()">DOWN</button>
-  </div>
+  </tag>
   
 </body>
 <!-- Compiled and minified JavaScript -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 <script type="application/javascript" src="src/index.js" charset="UTF-8"></script>
+<script src="src/obstacles.js"></script>
 </html>
 
 
