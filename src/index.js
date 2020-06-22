@@ -2,7 +2,13 @@
 
 console.log("indexjs")
 
-
+    var sightwordZero = document.getElementById(0)
+    var sightwordOne = document.getElementById(1)
+    var sightwordTwo = document.getElementById(2)
+    var sightwordThree = document.getElementById(3)
+    var sightwordFour = document.getElementById(4)
+    var canvas = document.getElementById("myCanvas")
+    var ctx = canvas.getContext("2d");
 
 function fetchWords() {
     fetch('http://localhost:3001/sightwords').then(response => response.json()).then(words => putWordsOnDom(words))
@@ -29,7 +35,31 @@ function fetchWords() {
     // divArray[i].appendChild(id)
     body.appendChild(divArray[i])
    // createGamePiece(divArray)
+  // moveWord(divArray)
+  moveWordZero()
   }}
+
+//sets a random absolute position to a html element; receives the html element
+function moveElmRand(elm){
+    elm.style.position ='absolute';
+    elm.style.top = Math.floor(Math.random()*90+5)+'%';
+    elm.style.left = Math.floor(Math.random()*90+5)+'%';
+   }
+
+function moveWordZero() {
+    var elem = document.getElementById("0");
+    var pos = 0;
+    var id = setInterval(frame, 5);
+    function frame() {
+      if (pos == 350) {
+        clearInterval(id);
+      } else {
+        pos++;
+        elem.style.top = pos + 'px';
+        elem.style.left = pos + 'px';
+      }
+    }
+  }
 
 
 
