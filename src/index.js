@@ -2,9 +2,9 @@
 
 console.log("indexjs")
 
-    var sightwordZero = document.getElementById(0)
-    var sightwordOne = document.getElementById(1)
-    var sightwordTwo = document.getElementById(2)
+    var sightwordZero = document.getElementById("0")
+    var sightwordOne = document.getElementById("1")
+    var sightwordTwo = document.getElementById("2")
     var sightwordThree = document.getElementById(3)
     var sightwordFour = document.getElementById(4)
     var canvas = document.getElementById("myCanvas")
@@ -29,37 +29,56 @@ function fetchWords() {
     const id = document.createElement('id')
   var i;
   for (i = 0; i < divArray.length; i++) {
-    //const id = document.createElement('id')
-    divArray[i].id = i
-    // id.innerHTML = i
-    // divArray[i].appendChild(id)
+   divArray[i].id = i
     body.appendChild(divArray[i])
-   // createGamePiece(divArray)
-  // moveWord(divArray)
-  moveWordZero()
-  }}
+   // start()
+  // myMove()
+   //makeNewPosition()
+  // myMoveTwo()
+ }}
 
-//sets a random absolute position to a html element; receives the html element
-function moveElmRand(elm){
-    elm.style.position ='absolute';
-    elm.style.top = Math.floor(Math.random()*90+5)+'%';
-    elm.style.left = Math.floor(Math.random()*90+5)+'%';
-   }
-
-function moveWordZero() {
+ function myMove() {
     var elem = document.getElementById("0");
-    var pos = 0;
+    var y = 325;
+    var x = 1;
     var id = setInterval(frame, 5);
     function frame() {
-      if (pos == 350) {
-        clearInterval(id);
+      if (x == 565) { //|| 0 > y > 925) {
+        x += -x;
+        //y += -y;
       } else {
-        pos++;
-        elem.style.top = pos + 'px';
-        elem.style.left = pos + 'px';
+        x ++;
+       // y++;
+        elem.style.top = x + 'px';
+      //  elem.style.left = y + 'px';
       }
     }
   }
+
+  function myMoveTwo() {
+    var elem = document.getElementById("1");
+
+    var y = 345;
+    var x = 1;
+    var id = setInterval(frame, 5);
+    function frame() {
+      if (x == 565) { //|| 0 > y > 925) {
+        x += -x;
+        //y += -y;
+      } else {
+        x ++;
+       // y++;
+        elem.style.top = x + 'px';
+      //  elem.style.left = y + 'px';
+      }
+    }
+  }
+
+
+
+ 
+
+ 
 
 
 
