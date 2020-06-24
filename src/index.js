@@ -2,14 +2,6 @@
 
 console.log("indexjs")
 
-    var sightwordZero = document.getElementById("0")
-    var sightwordOne = document.getElementById("1")
-    var sightwordTwo = document.getElementById("2")
-    var sightwordThree = document.getElementById(3)
-    var sightwordFour = document.getElementById(4)
-    var canvas = document.getElementById("myCanvas")
-    var ctx = canvas.getContext("2d");
-
 function fetchWords() {
     fetch('http://localhost:3001/sightwords').then(response => response.json()).then(words => putWordsOnDom(words))
    }
@@ -31,48 +23,46 @@ function fetchWords() {
   for (i = 0; i < divArray.length; i++) {
    divArray[i].id = i
     body.appendChild(divArray[i])
-   // start()
-  // myMove()
-   //makeNewPosition()
-  // myMoveTwo()
+   //myGame()
  }}
 
- function myMove() {
-    var elem = document.getElementById("0");
-    var y = 325;
-    var x = 1;
-    var id = setInterval(frame, 5);
-    function frame() {
-      if (x == 565) { //|| 0 > y > 925) {
-        x += -x;
-        //y += -y;
-      } else {
-        x ++;
-       // y++;
-        elem.style.top = x + 'px';
-      //  elem.style.left = y + 'px';
-      }
+
+ function myGame() {
+
+var canvas = document.getElementById("myCanvas");
+var ctx = canvas.getContext("2d");
+canvas.width = 512;
+canvas.height = 480;
+//document.body.appendChild(canvas);
+  var wordzero = document.getElementById("0");
+  var wordone = document.getElementById("1");
+  var wordtwo = document.getElementById("2");
+  var wordthree = document.getElementById("3");
+  var wordfour = document.getElementById("4");
+  var x = 0 ;
+  var y = 0 ;
+  var id = setInterval(frame, 20);
+  function frame() {
+    //ctx.clearRect(0, 0, 300, 300);
+    if (x == 565) {
+      x = -10;
+    } else {
+      x += 1; 
+      // wordzero.style.top = x + 'px';
+      // wordone.style.top = x + 'px' ;
+      // wordtwo.style.top = x + 'px';
+      // wordthree.style.top = x + 'px';
+      // wordfour.style.top = x + 'px';
     }
   }
+  
+}
 
-  function myMoveTwo() {
-    var elem = document.getElementById("1");
 
-    var y = 345;
-    var x = 1;
-    var id = setInterval(frame, 5);
-    function frame() {
-      if (x == 565) { //|| 0 > y > 925) {
-        x += -x;
-        //y += -y;
-      } else {
-        x ++;
-       // y++;
-        elem.style.top = x + 'px';
-      //  elem.style.left = y + 'px';
-      }
-    }
-  }
+
+
+
+
 
 
 
