@@ -40,8 +40,8 @@ function startGame() {
     myGamePiece = new component(60, 60, "bunny.png", 300, 0, "image");
     wordnumone  = new component(50, 50, "cat.png", 0, 100, "image"); 
     wordnumtwo  = new component(50, 50, "catone.png", 0, 200, "image");  
-    wordnumthree = new component(50, 50, "about.png", 0, 500, "image");
-    wordnumfour = new component(50, 50, "little.png", 0, 400, "image");
+    wordnumthree = new component(50, 50, "lion.png", 0, 500, "image");
+    wordnumfour = new component(50, 50, "wolf.png", 0, 400, "image");
     // for(var c=0; c<5; c++) {
     //   carrots[c] = new carrot(30, 30, "carrot.png", 0, 100, "image");
     // // carrot = new component(30, 30, "carrot.png", 0, 100, "image");
@@ -150,12 +150,21 @@ function updateGameArea() {
 
         for (i = 0; i < 700; i += 50) {
           carrots.push(new component(25, 25, "carrot.png", x = i, y = 100, "image"));
-         
-        }
+         }
 
-        for (i = 0; i < 16; i += 1) {
-          //carrots.push(new component(25, 25, "carrot.png", x * i, y * i, "image"));
-         // carrots[i].x += -1;
+         for (i = 0; i < 700; i += 50) {
+          carrots.push(new component(25, 25, "carrot.png", x = i, y = 250, "image"));
+         }
+
+         for (i = 0; i < 700; i += 50) {
+          carrots.push(new component(25, 25, "carrot.png", x = i, y = 400, "image"));
+         }
+
+         for (i = 0; i < 700; i += 50) {
+          carrots.push(new component(25, 25, "carrot.png", x = i, y = 550, "image"));
+         }
+
+        for (i = 0; i < 100; i += 1) {
           carrots[i].update();
         }
 
