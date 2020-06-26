@@ -67,30 +67,7 @@ var myGameArea = {
     }
 }
 
-//  function carrot(width, height, color, x, y, type) {
-//   this.type = type;
-  
-//   if (type == "image") {
-//     this.image = new Image();
-//     this.image.src = color;
-//   }
-//   this.x = 25 * i
-//   this.y = 100 * i
-//   this.width = 25
-//    this.height = 25
 
-//    this.update = function() {
-//     ctx = myGameArea.context;
-//     if (type == "image") {
-//       ctx.drawImage(this.image,
-//          this.x,
-//         this.y,
-//         this.width, this.height);
-//     } else {
-//      ctx.fillStyle = color;
-//      ctx.fillRect(this.x, this.y, this.width, this.height);
-//      }}
-//  }
 
 function component(width, height, color, x, y, type) {
   this.type = type;
@@ -140,14 +117,36 @@ function component(width, height, color, x, y, type) {
           this.x = -1;
         
     }
-  }}
+  }
+  this.crashWith = function(otherobj) {
+    var myleft = this.x;
+    var myright = this.x + (this.width);
+    var mytop = this.y;
+    var mybottom = this.y + (this.height);
+    var otherleft = otherobj.x;
+    var otherright = otherobj.x + (otherobj.width);
+    var othertop = otherobj.y;
+    var otherbottom = otherobj.y + (otherobj.height);
+    var crash = true;
+    if ((mybottom < othertop) ||
+    (mytop > otherbottom) ||
+    (myright < otherleft) ||
+    (myleft > otherright)) {
+      crash = false;
+    }
+    return crash;
+  }
+
+}
+        
  
 function updateGameArea() {
    
         myGameArea.clear();
         myBackground.newPos();
         myBackground.update();
-
+        
+        
         for (i = 0; i < 700; i += 50) {
           carrots.push(new component(25, 25, "carrot.png", x = i, y = 100, "image"));
          }
@@ -168,6 +167,10 @@ function updateGameArea() {
           carrots[i].update();
         }
 
+        carrots.forEach((carrot) => {
+          if (myGamePiece.crashWith(carrot)) {
+            carrot.image.src = "star.png";;}})
+         
         myGamePiece.hitwall();
         myGamePiece.x += myGamePiece.speedX;
         myGamePiece.y += myGamePiece.speedY;    
@@ -190,7 +193,7 @@ function updateGameArea() {
         wordnumfour.otherhitwall();
         wordnumfour.update();
       
-        // carrot.update();
+       
     }
   
 
@@ -218,7 +221,6 @@ function clearmove() {
   
   
   
-
 
 
 
