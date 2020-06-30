@@ -1,3 +1,4 @@
+
 var imageSrcs = ['carrot.png', 'bunny.png', 'flower.jpg', 'cat.png', 'catone.png', 'lion.png', 'wolf.png'];
 var carro = new Image();
 var bunny = new Image();
@@ -8,6 +9,7 @@ var lion = new Image();
 var wolf = new Image();
 var images = [carro, bunny, flower, cat, catone, lion, wolf];
 var loadCount = 0; 
+var form = document.getElementById("myform")
 
 function loadImages() {
    for(var i = 0; i<images.length; i++) {
@@ -27,15 +29,15 @@ function imageLoaded() {
    }
 }
 
-function fetchWords() {
-    fetch('http://localhost:3001/sightwords').then(response => response.json()).then(words => putWordsOnDom(words))
+function fetchUsers() {
+    fetch('http://localhost:3001/users').then(response => response.json()).then(users => putUsersOnDom(users))
    }
  
-   function putWordsOnDom(wordArray) {
+   function putUsersOnDom(userArray) {
     const divArray = []
-    wordArray.forEach(word => {
+    userArray.forEach(user => {
       const div = document.createElement('div')
-      div.innerHTML = `${word.name}`
+      div.innerHTML = `${user.username}`
       divArray.push(div)
       makeId(divArray)
       })
@@ -174,15 +176,11 @@ function component(width, height, color, x, y, type) {
     ctx.fillText("Score: "+score, 8, 20);
 }
 
-  // function star() {
-  //   carrots.forEach((carrot) => {
-  //     if (myGamePiece.crashWith(carrot)) {
-  //       carrot.image.src = "star.png"
-  //       score ++ 1;
-  //     // myScore.text = "SCORE:" + 1;
-       
-  //       ;;}})
-  //     }
+function formthings() {
+
+
+}
+ 
 
   function carrotmaker() {
     for (i = 0; i < 700; i += 100) {
@@ -276,16 +274,53 @@ function clearmove() {
     myGamePiece.speedY = 0; 
 }
 
+
+ document.getElementById("submit").addEventListener("click", submitData);
+// var username = doument.getElementById(username).value
+
+function submitData(username) {
+ 
+  let formData = {
+      username: username
+      
+  };
+  console.log(formData);
+  let configObj = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Accept": "application/json"
+      },
+      body: JSON.stringify(formData)
+  };
+
+  return fetch("http://localhost:3001/users", configObj)
+      .then(function(response) {
+        return response.json();
+        
+      })}
+   
+
+
+
+
+function startButton() {
+    var pausebutton = document.getElementById("button1")
+    pausebutton.addEventListener("click", pause);
+    function pause() {
+      alert ("Hello World!");
+      myGameArea.stop();
+    }
+    var startbutton = document.getElementById("button2")
+    startbutton.addEventListener("click", go);
+    function go() {
+      alert ("Start!");
+      myGameArea.start();
+    }
+
+  }
+
   
-  
-  
-
-
-
-
-
-
-
 
 
  
@@ -312,7 +347,7 @@ function clearmove() {
 
   document.addEventListener('DOMContentLoaded', (event) => {
   console.log('DOM fully loaded and parsed');
- 
-  fetchWords()
+  startButton()
+  fetchUsers()
   loadImages()
   });

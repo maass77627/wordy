@@ -4,21 +4,33 @@
 <html>
 <head>
   
-  <!-- Compiled and minified CSS -->
-<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"> -->
-  
+ 
 <link rel="stylesheet" type="text/css" href="styles.css" media="screen"/>
  
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 </head>
 
-<!-- <body  onload="startGame()"> -->
+
   <body>
+    <div id="highscores">
+      <h1>High Scores</h1>
+      
+
+     <p id="usernames"></p>
+    </div>
     <canvas id="myCanvas" width="700" height="600"></canvas>
  <div id = score></div>
- <div class = signin></div>
-  <button id="button1">Start</button>
+
  
+  <button id="button1">Pause</button>
+  <button id="button2">Start</button>
+
+  <form id="myform" action='http://localhost:3001/users', method="POST">
+    <label for="username">Username:</label><br>
+    <input type="text" id="username" name="username" value="John"><br>
+    <input type="submit" id="submit" value="Submit">
+  </form>
+  
   
   
  
@@ -30,7 +42,7 @@
   </tag>
   
 </body>
-<!-- Compiled and minified JavaScript -->
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 <script type="application/javascript" src="src/index.js" charset="UTF-8"></script>
 <script src="src/obstacles.js"></script>
